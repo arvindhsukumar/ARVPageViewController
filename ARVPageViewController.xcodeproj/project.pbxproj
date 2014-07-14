@@ -10,6 +10,10 @@
 		D45239E21973A138004CFB90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45239E11973A138004CFB90 /* AppDelegate.swift */; };
 		D45239E41973A138004CFB90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45239E31973A138004CFB90 /* Images.xcassets */; };
 		D45239F01973A138004CFB90 /* ARVPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45239EF1973A138004CFB90 /* ARVPageViewControllerTests.swift */; };
+		D45239FC1973A1E9004CFB90 /* ARVPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45239FA1973A1E9004CFB90 /* ARVPageViewController.swift */; };
+		D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */; };
+		D4523A011973D0B6004CFB90 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */; };
+		D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A001973D0B6004CFB90 /* ExampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,10 @@
 		D45239E91973A138004CFB90 /* ARVPageViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARVPageViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45239EE1973A138004CFB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45239EF1973A138004CFB90 /* ARVPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVPageViewControllerTests.swift; sourceTree = "<group>"; };
+		D45239FA1973A1E9004CFB90 /* ARVPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVPageViewController.swift; sourceTree = "<group>"; };
+		D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageViewController.xib; sourceTree = "<group>"; };
+		D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		D4523A001973D0B6004CFB90 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,8 @@
 		D45239DE1973A138004CFB90 /* ARVPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D45239FE1973CFF3004CFB90 /* Example */,
+				D45239F91973A147004CFB90 /* Classes */,
 				D45239E11973A138004CFB90 /* AppDelegate.swift */,
 				D45239E31973A138004CFB90 /* Images.xcassets */,
 				D45239DF1973A138004CFB90 /* Supporting Files */,
@@ -101,6 +111,24 @@
 				D45239EE1973A138004CFB90 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D45239F91973A147004CFB90 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D45239FA1973A1E9004CFB90 /* ARVPageViewController.swift */,
+				D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D45239FE1973CFF3004CFB90 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */,
+				D4523A001973D0B6004CFB90 /* ExampleViewController.xib */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45239E41973A138004CFB90 /* Images.xcassets in Resources */,
+				D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */,
+				D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45239E21973A138004CFB90 /* AppDelegate.swift in Sources */,
+				D45239FC1973A1E9004CFB90 /* ARVPageViewController.swift in Sources */,
+				D4523A011973D0B6004CFB90 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ARVPageViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -319,6 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ARVPageViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -18,6 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
+        
+        let controller1 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
+        controller1.title = "One"
+        controller1.view.backgroundColor = UIColor.blueColor()
+        
+        let controller2 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
+        controller2.title = "Two"
+        controller2.view.backgroundColor = UIColor.grayColor()
+        
+        let controller3 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
+        controller3.title = "Three"
+        controller3.view.backgroundColor = UIColor.yellowColor()
+        
+        let rootController = ARVPageViewController(controllers: [controller1,controller2,controller3])
+        let nav = UINavigationController(rootViewController: rootController)
+
+        self.window!.rootViewController = nav
+        
         self.window!.makeKeyAndVisible()
         return true
     }
