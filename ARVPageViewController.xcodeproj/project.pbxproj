@@ -16,6 +16,8 @@
 		D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A001973D0B6004CFB90 /* ExampleViewController.xib */; };
 		D4523A091973E01A004CFB90 /* ARVPageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */; };
 		D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */; };
+		D494FAA119752B7400C534F3 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494FA9F19752B7400C534F3 /* ExampleTableViewController.swift */; };
+		D494FAA219752B7400C534F3 /* ExampleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D494FAA019752B7400C534F3 /* ExampleTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		D4523A001973D0B6004CFB90 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 		D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVPageControlViewController.swift; sourceTree = "<group>"; };
 		D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageControlViewController.xib; sourceTree = "<group>"; };
+		D494FA9F19752B7400C534F3 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		D494FAA019752B7400C534F3 /* ExampleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			children = (
 				D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */,
 				D4523A001973D0B6004CFB90 /* ExampleViewController.xib */,
+				D494FA9F19752B7400C534F3 /* ExampleTableViewController.swift */,
+				D494FAA019752B7400C534F3 /* ExampleTableViewController.xib */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */,
 				D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */,
 				D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */,
+				D494FAA219752B7400C534F3 /* ExampleTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D494FAA119752B7400C534F3 /* ExampleTableViewController.swift in Sources */,
 				D45239E21973A138004CFB90 /* AppDelegate.swift in Sources */,
 				D45239FC1973A1E9004CFB90 /* ARVPageViewController.swift in Sources */,
 				D4523A011973D0B6004CFB90 /* ExampleViewController.swift in Sources */,
@@ -421,6 +429,7 @@
 				D45239F51973A138004CFB90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D45239F61973A138004CFB90 /* Build configuration list for PBXNativeTarget "ARVPageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				D45239F81973A138004CFB90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         
         let controller1 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
-        controller1.title = "One Table"
+        controller1.title = "One"
         controller1.view.backgroundColor = UIColor.blueColor()
         
-        let controller2 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
+        let controller2 = ExampleTableViewController(nibName: "ExampleTableViewController", bundle: NSBundle.mainBundle())
         controller2.title = "Two Table"
         controller2.view.backgroundColor = UIColor.grayColor()
         

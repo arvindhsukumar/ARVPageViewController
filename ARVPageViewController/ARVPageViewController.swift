@@ -29,7 +29,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
         self.layoutViewControllers()
         self.navigationItem.titleView = self.pageControlView.view
@@ -44,7 +44,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     
     func layoutViewControllers() {
 
-        self.scrollView.contentSize = CGSizeMake(Float(viewControllers.count) * self.scrollView.frame.size.width, self.scrollView.frame.size.height)
+        self.scrollView.contentSize = CGSizeMake(Float(viewControllers.count) * self.scrollView.frame.size.width, 0)
         var titles: String[] = []
         
         for (index: Int, controller:UIViewController) in enumerate(viewControllers!){
