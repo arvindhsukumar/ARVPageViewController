@@ -11,7 +11,7 @@ import UIKit
 class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView
-    var viewControllers: UIViewController[]!
+    var viewControllers: UIViewController[] = []
     var pageControlView: ARVPageControlViewController = ARVPageControlViewController(nibName: "ARVPageControlViewController", bundle: NSBundle.mainBundle())
     
     convenience init(controllers: UIViewController[]){
@@ -30,6 +30,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
+        self.scrollView.scrollsToTop = false
         // Do any additional setup after loading the view.
         self.layoutViewControllers()
         self.navigationItem.titleView = self.pageControlView.view
@@ -47,7 +48,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.contentSize = CGSizeMake(Float(viewControllers.count) * self.scrollView.frame.size.width, 0)
         var titles: String[] = []
         
-        for (index: Int, controller:UIViewController) in enumerate(viewControllers!){
+        for (index: Int, controller:UIViewController) in enumerate(viewControllers){
             self.addChildViewController(controller)
             var frame = controller.view.frame
             frame.origin.x = Float(index) * frame.size.width
@@ -70,6 +71,23 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!){
         self.pageControlView.setCurrentPage()
+        self.setupScrollToTop()
+    }
+    
+    func setupScrollToTop(){
+        for (index: Int, controller: UIViewController) in enumerate(self.viewControllers){
+            
+            let view = controller.view as? UIScrollView
+            if view {
+                if (index == self.pageControlView.currentPage) {
+                    view!.scrollsToTop = true
+                }
+                else {
+                    view!.scrollsToTop = false
+                }
+            }
+            
+        }
     }
     
     /*

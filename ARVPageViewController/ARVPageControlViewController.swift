@@ -25,8 +25,7 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
     
     var contentOffset:Float = 0.0 {
         didSet {
-            let decrease = (contentOffset < oldValue) ? true : false
-            self.contentOffsetDidChange(decrease)
+            self.contentOffsetDidChange()
         }
     }
     
@@ -40,6 +39,8 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
 
         // Do any additional setup after loading the view.
         self.prepareView()
+        self.contentOffsetDidChange()
+
 
     }
 
@@ -82,7 +83,7 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func contentOffsetDidChange(decrease:Bool){
+    func contentOffsetDidChange(){
         
         for (index: Int, label:UILabel) in enumerate(labels){
             var frame = label.frame

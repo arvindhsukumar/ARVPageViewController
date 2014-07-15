@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controller2.title = "Two Table"
         controller2.view.backgroundColor = UIColor.grayColor()
         
-        let controller3 = ExampleViewController(nibName: "ExampleViewController", bundle: NSBundle.mainBundle())
+        let controller3 = ExampleTableViewController(nibName: "ExampleTableViewController", bundle: NSBundle.mainBundle())
         controller3.title = "Three"
         controller3.view.backgroundColor = UIColor.yellowColor()
         

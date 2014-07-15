@@ -34,6 +34,7 @@ class ExampleTableViewController: UITableViewController {
         edgeInsets.top = 64
         self.tableView.contentInset = edgeInsets;
         self.tableView.scrollIndicatorInsets = edgeInsets;
+        self.tableView.scrollsToTop = true
 
     }
     
