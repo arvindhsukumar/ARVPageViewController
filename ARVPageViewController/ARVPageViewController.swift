@@ -12,6 +12,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView
     var viewControllers: UIViewController[]!
+    var pageControlView: ARVPageControlViewController = ARVPageControlViewController(nibName: "ARVPageControlViewController", bundle: NSBundle.mainBundle())
     
     convenience init(controllers: UIViewController[]){
         self.init(nibName: "ARVPageViewController", bundle: NSBundle.mainBundle())
@@ -28,10 +29,11 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
         self.layoutViewControllers()
+        self.navigationItem.titleView = self.pageControlView.view
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +45,8 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     func layoutViewControllers() {
 
         self.scrollView.contentSize = CGSizeMake(Float(viewControllers.count) * self.scrollView.frame.size.width, self.scrollView.frame.size.height)
-
+        var titles: String[] = []
+        
         for (index: Int, controller:UIViewController) in enumerate(viewControllers!){
             self.addChildViewController(controller)
             var frame = controller.view.frame
@@ -51,12 +54,20 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
             controller.view.frame = frame
             scrollView.addSubview(controller.view)
             controller.didMoveToParentViewController(self)
+            titles.append(controller.title)
             
         }
+        
+        self.pageControlView.titles = titles
         
 
     }
 
+    func scrollViewDidScroll(scrollView: UIScrollView!){
+        self.pageControlView.contentOffset = scrollView.contentOffset.x/scrollOffset
+    
+    }
+    
     /*
     // #pragma mark - Navigation
 

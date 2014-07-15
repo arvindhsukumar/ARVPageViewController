@@ -14,6 +14,8 @@
 		D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */; };
 		D4523A011973D0B6004CFB90 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */; };
 		D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A001973D0B6004CFB90 /* ExampleViewController.xib */; };
+		D4523A091973E01A004CFB90 /* ARVPageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */; };
+		D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageViewController.xib; sourceTree = "<group>"; };
 		D45239FF1973D0B6004CFB90 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		D4523A001973D0B6004CFB90 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
+		D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARVPageControlViewController.swift; sourceTree = "<group>"; };
+		D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageControlViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			children = (
 				D45239FA1973A1E9004CFB90 /* ARVPageViewController.swift */,
 				D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */,
+				D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */,
+				D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			files = (
 				D45239E41973A138004CFB90 /* Images.xcassets in Resources */,
 				D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */,
+				D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */,
 				D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +240,7 @@
 				D45239E21973A138004CFB90 /* AppDelegate.swift in Sources */,
 				D45239FC1973A1E9004CFB90 /* ARVPageViewController.swift in Sources */,
 				D4523A011973D0B6004CFB90 /* ExampleViewController.swift in Sources */,
+				D4523A091973E01A004CFB90 /* ARVPageControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
