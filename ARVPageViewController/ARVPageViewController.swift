@@ -68,6 +68,10 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     
     }
     
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView!){
+        self.pageControlView.setCurrentPage()
+    }
+    
     /*
     // #pragma mark - Navigation
 

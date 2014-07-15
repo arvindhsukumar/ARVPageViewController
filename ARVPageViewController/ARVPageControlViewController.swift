@@ -13,6 +13,8 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var labelScrollView: UIView
     @IBOutlet var pageControl: UIPageControl
+    var currentPage: Int = 0
+    
     var titles: String[]? {
 
         didSet {
@@ -91,10 +93,17 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
             var relativeLabelFrame = self.view.convertRect(label.frame, fromView: self.labelScrollView)
             var relativeLabelCenter = CGRectGetMidX(relativeLabelFrame)
             var superViewCenter = CGRectGetMidX(self.labelScrollView.frame)
+            if relativeLabelCenter == superViewCenter {
+                self.currentPage = index
+            }
             alpha = 1.0 - abs(relativeLabelCenter - superViewCenter)/superViewCenter
             label.alpha = max(alpha, 0)
         }
         
+    }
+    
+    func setCurrentPage(){
+        self.pageControl.currentPage = self.currentPage
     }
     
     
