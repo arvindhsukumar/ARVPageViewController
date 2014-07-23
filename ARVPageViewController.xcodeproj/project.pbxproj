@@ -18,6 +18,7 @@
 		D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */; };
 		D494FAA119752B7400C534F3 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494FA9F19752B7400C534F3 /* ExampleTableViewController.swift */; };
 		D494FAA219752B7400C534F3 /* ExampleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D494FAA019752B7400C534F3 /* ExampleTableViewController.xib */; };
+		D4D86B41197F893700E3B8D6 /* ARVPageViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D86B40197F893700E3B8D6 /* ARVPageViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageControlViewController.xib; sourceTree = "<group>"; };
 		D494FA9F19752B7400C534F3 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		D494FAA019752B7400C534F3 /* ExampleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleTableViewController.xib; sourceTree = "<group>"; };
+		D4D86B40197F893700E3B8D6 /* ARVPageViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVPageViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				D45239FA1973A1E9004CFB90 /* ARVPageViewController.swift */,
 				D45239FB1973A1E9004CFB90 /* ARVPageViewController.xib */,
+				D4D86B40197F893700E3B8D6 /* ARVPageViewController_iPad.xib */,
 				D4523A071973E01A004CFB90 /* ARVPageControlViewController.swift */,
 				D4523A081973E01A004CFB90 /* ARVPageControlViewController.xib */,
 			);
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45239E41973A138004CFB90 /* Images.xcassets in Resources */,
+				D4D86B41197F893700E3B8D6 /* ARVPageViewController_iPad.xib in Resources */,
 				D4523A021973D0B6004CFB90 /* ExampleViewController.xib in Resources */,
 				D4523A0A1973E01A004CFB90 /* ARVPageControlViewController.xib in Resources */,
 				D45239FD1973A1E9004CFB90 /* ARVPageViewController.xib in Resources */,

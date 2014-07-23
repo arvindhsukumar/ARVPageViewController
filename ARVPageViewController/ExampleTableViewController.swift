@@ -62,7 +62,7 @@ class ExampleTableViewController: UITableViewController {
     let cell : UITableViewCell = tableView!.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
     
     // Configure the cell...
-    cell.text = "\(indexPath!.row)"
+    cell.textLabel.text = "\(indexPath!.row)"
     return cell
     }
     

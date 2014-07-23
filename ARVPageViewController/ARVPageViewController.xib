@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARVPageViewController" customModule="ARVPageViewController" customModuleProvider="target">
@@ -12,11 +13,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE2-oR-EXN">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE2-oR-EXN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="B10-to-CHJ"/>
                     </connections>
@@ -24,16 +25,26 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="iE2-oR-EXN" secondAttribute="bottom" id="P8C-Qq-nB3"/>
-                <constraint firstItem="iE2-oR-EXN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aBt-Z1-1mM"/>
-                <constraint firstAttribute="trailing" secondItem="iE2-oR-EXN" secondAttribute="trailing" id="sNA-le-fnh"/>
-                <constraint firstItem="iE2-oR-EXN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xs2-8u-4Gi"/>
+                <constraint firstItem="iE2-oR-EXN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7Ch-kt-LKC"/>
+                <constraint firstAttribute="trailing" secondItem="iE2-oR-EXN" secondAttribute="trailing" id="Jpn-pa-rv3"/>
+                <constraint firstItem="iE2-oR-EXN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TDV-4w-L3e"/>
+                <constraint firstAttribute="bottom" secondItem="iE2-oR-EXN" secondAttribute="bottom" id="pHo-pM-KoP"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
-            <point key="canvasLocation" x="171" y="286"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                <size key="portraitSize" width="320" height="568"/>
+                <size key="landscapeSize" width="568" height="320"/>
+            </simulatedScreenMetrics>
+            <point key="canvasLocation" x="175" y="248"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
 </document>

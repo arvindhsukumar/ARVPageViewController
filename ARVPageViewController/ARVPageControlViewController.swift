@@ -7,23 +7,27 @@
 //
 
 import UIKit
-let scrollOffset: Float = 3.2
-
+@objc protocol ARVPageViewDelegate {
+    
+    
+}
 class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet var labelScrollView: UIView
-    @IBOutlet var pageControl: UIPageControl
+    @IBOutlet var labelScrollView: UIView?
+    @IBOutlet var pageControl: UIPageControl?
+    weak var delegate: ARVPageViewDelegate?
+    
     var currentPage: Int = 0
     
-    var titles: String[]? {
+    var titles: [String]? {
 
         didSet {
         }
     }
     
-    var labels: UILabel[] = []
+    var labels: [UILabel] = []
     
-    var contentOffset:Float = 0.0 {
+    var contentOffset:CGFloat = 0.0 {
         didSet {
             self.contentOffsetDidChange()
         }
@@ -55,56 +59,54 @@ class ARVPageControlViewController: UIViewController, UIScrollViewDelegate {
 
             
             for (index: Int, title:String) in enumerate(titleArray){
-                var frame = CGRectInset(self.labelScrollView.frame, 0, 0)
-                frame.origin.x = Float(index) * frame.size.width
+                var frame = CGRectInset(self.labelScrollView!.frame, 0, 0)
+                frame.origin.x = CGFloat(index) * frame.size.width
                 let label: UILabel = UILabel(frame: frame)
                 label.text = title
+                label.font = UIFont.systemFontOfSize(15)
+                let parent = self.delegate as ARVPageViewController
+                println(parent.navigationController.navigationBar.barStyle.toRaw())
+                label.textColor = (parent.navigationController.navigationBar.barStyle == UIBarStyle.Black) ? UIColor.darkTextColor() : UIColor.whiteColor()
                 label.textAlignment = NSTextAlignment.Center
                 self.labels.append(label)
-                labelScrollView.addSubview(label)
+                labelScrollView!.addSubview(label)
             }
+            self.pageControl!.numberOfPages = titleArray.count
         }
         
     }
     
     
     
-    func scrollViewDidScroll(scrollView: UIScrollView!){
-//        let pageWidth = self.labelScrollView.frame.size.width
-//        let page = floorf((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1.0;
-//        self.pageControl.currentPage = Int(page);
-        
-        
-        
-    }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView!){
-        
-        
-    }
-    
+       
     func contentOffsetDidChange(){
         
         for (index: Int, label:UILabel) in enumerate(labels){
             var frame = label.frame
-            frame.origin.x = (Float(index) * frame.size.width) - contentOffset
+            frame.origin.x = (CGFloat(index) * frame.size.width) - contentOffset
             label.frame = frame
             
-            var alpha: Float = 1.0
+            // Convert the label's frame in terms of that of the superView
             var relativeLabelFrame = self.view.convertRect(label.frame, fromView: self.labelScrollView)
             var relativeLabelCenter = CGRectGetMidX(relativeLabelFrame)
-            var superViewCenter = CGRectGetMidX(self.labelScrollView.frame)
+            
+            var superViewCenter = CGRectGetMidX(self.labelScrollView!.frame)
+            
+            // Compare centers, and see how far the label's center is from that of the superview center.
+            
+            // alpha is inversely proportional to distance. Higher the distance, lesser the alpha
+            var alpha = 1.0 - abs(relativeLabelCenter - superViewCenter)/superViewCenter
+            label.alpha = max(alpha, 0)
+            
             if relativeLabelCenter == superViewCenter {
                 self.currentPage = index
             }
-            alpha = 1.0 - abs(relativeLabelCenter - superViewCenter)/superViewCenter
-            label.alpha = max(alpha, 0)
         }
         
     }
     
     func setCurrentPage(){
-        self.pageControl.currentPage = self.currentPage
+        self.pageControl!.currentPage = self.currentPage
     }
     
     

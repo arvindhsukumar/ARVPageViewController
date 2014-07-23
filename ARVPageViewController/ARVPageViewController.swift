@@ -8,16 +8,27 @@
 
 import UIKit
 
-class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet var scrollView: UIScrollView
-    var viewControllers: UIViewController[] = []
-    var pageControlView: ARVPageControlViewController = ARVPageControlViewController(nibName: "ARVPageControlViewController", bundle: NSBundle.mainBundle())
+class ARVPageViewController: UIViewController, UIScrollViewDelegate, ARVPageViewDelegate {
+
+    @IBOutlet var scrollView: UIScrollView?
+    var scrollOffset: CGFloat {
+        return self.view.frame.width/self.pageControlView.labelScrollView!.frame.width
     
-    convenience init(controllers: UIViewController[]){
-        self.init(nibName: "ARVPageViewController", bundle: NSBundle.mainBundle())
+    }
+
+    var viewControllers: [UIViewController] = []
+    var pageControlView: ARVPageControlViewController!
+    
+    convenience init(controllers: [UIViewController]){
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone{
+            self.init(nibName: "ARVPageViewController", bundle: NSBundle.mainBundle())
+        }
+        else{
+            self.init(nibName: "ARVPageViewController_iPad", bundle: NSBundle.mainBundle())
+ 
+        }
         self.viewControllers = controllers
-    
     }
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -29,11 +40,20 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.frame = UIApplication.sharedApplication().delegate.window!.bounds
+        self.scrollView!.frame = self.view.bounds
+        self.view.setNeedsUpdateConstraints()
+
+        self.navigationController.navigationBar.barStyle = UIBarStyle.Black
+        println(self.navigationController.navigationBar.barStyle.toRaw())
+        self.pageControlView = ARVPageControlViewController(nibName: "ARVPageControlViewController", bundle: NSBundle.mainBundle())
+        self.pageControlView.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
-        self.scrollView.scrollsToTop = false
+        self.scrollView!.scrollsToTop = false
         // Do any additional setup after loading the view.
         self.layoutViewControllers()
         self.navigationItem.titleView = self.pageControlView.view
+        self.setupNavbarItems()
 
     }
 
@@ -44,16 +64,21 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     
     
     func layoutViewControllers() {
+        
+        self.scrollView!.contentSize = CGSizeMake(CGFloat(viewControllers.count) * self.scrollView!.frame.size.width, 0)
+        println("pagecontroller view size = \(self.view.frame.size)")
+        println("scrollview size = \(self.scrollView!.frame.size)")
 
-        self.scrollView.contentSize = CGSizeMake(Float(viewControllers.count) * self.scrollView.frame.size.width, 0)
-        var titles: String[] = []
+        println("scrollview contentsize = \(self.scrollView!.contentSize)")
+        var titles: [String] = []
         
         for (index: Int, controller:UIViewController) in enumerate(viewControllers){
             self.addChildViewController(controller)
-            var frame = controller.view.frame
-            frame.origin.x = Float(index) * frame.size.width
+            var frame = self.scrollView!.frame
+            frame.origin.x = CGFloat(index) * frame.size.width
             controller.view.frame = frame
-            scrollView.addSubview(controller.view)
+            println("subcontroller frame = \(controller.view.frame)")
+            scrollView!.addSubview(controller.view)
             controller.didMoveToParentViewController(self)
             titles.append(controller.title)
             
@@ -72,6 +97,7 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!){
         self.pageControlView.setCurrentPage()
         self.setupScrollToTop()
+        self.setupNavbarItems()
     }
     
     func setupScrollToTop(){
@@ -90,6 +116,35 @@ class ARVPageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func setupNavbarItems(){
+        for (index: Int, controller: UIViewController) in enumerate(self.viewControllers){
+            
+                if (index == self.pageControlView.currentPage) {
+                    self.navigationItem.rightBarButtonItem = controller.navigationItem.rightBarButtonItem
+                    self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
+                }
+            
+            
+            
+        }
+    }
+    
+   
+    override func shouldAutorotate() -> Bool {
+        
+        return true
+    }
+    
+   
+    
+    
+    
+    
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        
+        println("orientation change")
+    }
     /*
     // #pragma mark - Navigation
 

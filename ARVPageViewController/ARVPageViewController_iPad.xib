@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARVPageViewController" customModule="Justickets">
+            <connections>
+                <outlet property="scrollView" destination="lij-YT-ZJ2" id="VAU-yI-zDF"/>
+                <outlet property="view" destination="iN0-l3-epB" id="hoX-aa-D0t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lij-YT-ZJ2">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="tcr-9Y-B4y"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="lij-YT-ZJ2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ef7-Nc-dzY"/>
+                <constraint firstItem="lij-YT-ZJ2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4k-el-A1y"/>
+                <constraint firstAttribute="trailing" secondItem="lij-YT-ZJ2" secondAttribute="trailing" id="fvr-zL-ZEU"/>
+                <constraint firstAttribute="bottom" secondItem="lij-YT-ZJ2" secondAttribute="bottom" id="rjs-fb-3MQ"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
